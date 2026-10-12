@@ -522,7 +522,7 @@ export function createViewer(cfg) {
       h3.classList.remove('swap'); void h3.offsetWidth; h3.classList.add('swap');
       $('phaseText').textContent = c.text;
       $('phaseNo').textContent = String(i + 1).padStart(2, '0') + ' / ' + String(state.phases.length).padStart(2, '0');
-      if (!first) phaseCamera(key);
+      if (!first || i > 0) phaseCamera(key);
     }
     const bars = $('phaseTrack').children;
     state.phases.forEach((p, k) => {
