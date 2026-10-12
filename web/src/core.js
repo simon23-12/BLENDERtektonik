@@ -263,6 +263,7 @@ export function createViewer(cfg) {
     state.zoomGoal = null;
   }
   function flyTo(toT, toP, dur = 1.4) {
+    state.zoomGoal = null;           // a pending zoom (e.g. from the intro) must not undo the flight
     state.flight = { reset: true, fromT: controls.target.clone(), fromP: camera.position.clone(), toT, toP, t: 0, dur };
   }
   function resetView() {
